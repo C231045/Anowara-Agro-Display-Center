@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anowara Agro Display Center | Cattle & Agro Business in Chattogram</title>
+
+    <meta name="description"
+          content="Anowara Agro Display Center is a professional cattle, buffalo and agricultural business located at K.B. Aman Ali Road, Chattogram, Bangladesh.">
+    <meta name="keywords"
+          content="Anowara Agro Display Center, cattle farm Chattogram, cow farm Bangladesh, buffalo farm Chattogram, agro business Bangladesh">
+
+    <meta property="og:title" content="Anowara Agro Display Center">
+    <meta property="og:description" content="Professional cattle, buffalo and agricultural business in Chattogram, Bangladesh.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green-950: #082d1d;
+            --green-900: #0d3b26;
+            --green-800: #145c38;
+            --green-700: #197044;
+            --green-600: #238653;
+            --green-500: #39a866;
+            --green-100: #e6f4ea;
+            --cream: #f7f5ec;
+            --cream-dark: #ece8d9;
+            --white: #ffffff;
+            --text: #16231c;
+            --muted: #657269;
+            --border: rgba(13, 59, 38, 0.12);
+            --shadow: 0 20px 60px rgba(8, 45, 29, 0.10);
+            --shadow-hover: 0 30px 70px rgba(8, 45, 29, 0.17);
+            --radius: 24px;
+            --container: 1240px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        /* =========================
+           LOADER
+        ========================== */
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            background: var(--green-950);
+            transition: opacity .6s ease, visibility .6s ease;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+
+        .loader-logo {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 20px;
+            border: 2px solid rgba(255,255,255,.25);
+            border-top-color: #8ee3aa;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-content span {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: .75;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: .35s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(8, 45, 29, .96);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 35px rgba(0,0,0,.15);
+        }
+
+        .nav {
+            min-height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            min-width: max-content;
+        }
+
+        .logo-mark {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(255,255,255,.13);
+            border: 1px solid rgba(255,255,255,.18);
+            font-size: 24px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 17px;
+            line-height: 1.15;
+        }
+
+        .logo-text small {
+            display: block;
+            margin-top: 3px;
+            color: rgba(255,255,255,.62);
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: 10px 15px;
+            color: rgba(255,255,255,.78);
+            font-size: 14px;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: white;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 4px;
+            height: 2px;
+            border-radius: 2px;
+            background: #8ee3aa;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+        }
+
+        .nav-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 19px;
+            border-radius: 100px;
+            background: white;
+            color: var(--green-900);
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .nav-call:hover {
+            transform: translateY(-2px);
+            background: #dff8e7;
+        }
+
+        .menu-btn {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 13px;
+            background: rgba(255,255,255,.08);
+            color: white;
+            cursor: pointer;
+        }
+
+        .menu-btn span,
+        .menu-btn span::before,
+        .menu-btn span::after {
+            width: 20px;
+            height: 2px;
+            display: block;
+            margin: auto;
+            background: white;
+            border-radius: 2px;
+            transition: .3s ease;
+        }
+
+        .menu-btn span {
+            position: relative;
+        }
+
+        .menu-btn span::before,
+        .menu-btn span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-btn span::before {
+            top: -7px;
+        }
+
+        .menu-btn span::after {
+            top: 7px;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            min-height: 760px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(4,25,15,.91) 0%, rgba(5,32,20,.72) 42%, rgba(5,32,20,.25) 100%),
+                url("https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=2200&q=90")
+                center/cover no-repeat;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 180px;
+            background: linear-gradient(transparent, var(--cream));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 90px;
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            color: #a8edbd;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 35px;
+            height: 2px;
+            border-radius: 3px;
+            background: #8ee3aa;
+        }
+
+        .hero h1 {
+            max-width: 820px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(52px, 7vw, 94px);
+            line-height: .98;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #9ae5ad;
+        }
+
+        .hero-description {
+            max-width: 640px;
+            margin-bottom: 35px;
+            color: rgba(255,255,255,.78);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            min-height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 0 24px;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--green-900);
+            box-shadow: 0 15px 30px rgba(0,0,0,.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #dff8e7;
+        }
+
+        .btn-outline {
+            border-color: rgba(255,255,255,.35);
+            color: white;
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--green-900);
+            transform: translateY(-3px);
+        }
+
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 11px 15px;
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 100px;
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,.82);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trust-icon {
+            width: 25px;
+            height: 25px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(142,227,170,.16);
+            color: #9ae5ad;
+        }
+
+        /* =========================
+           SECTION COMMON
+        ========================== */
+
+        section {
+            position: relative;
+        }
+
+        .section {
+            padding: 115px 0;
+        }
+
+        .section-head {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .section-head.center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 13px;
+            color: var(--green-700);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            color: var(--green-950);
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+            min-height: 590px;
+        }
+
+        .about-main-image {
+            width: 86%;
+            height: 540px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-small-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            height: 250px;
+            object-fit: cover;
+            border: 9px solid var(--cream);
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-badge {
+            position: absolute;
+            left: -24px;
+            bottom: 60px;
+            width: 145px;
+            height: 145px;
+            display: grid;
+            place-items: center;
+            padding: 15px;
+            border-radius: 50%;
+            background: var(--green-800);
+            color: white;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(8,45,29,.25);
+        }
+
+        .about-badge strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+        }
+
+        .about-badge span {
+            display: block;
+            margin-top: 4px;
+            color: rgba(255,255,255,.7);
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .about-content .section-head {
+            margin-bottom: 25px;
+        }
+
+        .about-content > p {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 14px;
+        }
+
+        .mini-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255,255,255,.55);
+            transition: .3s ease;
+        }
+
+        .mini-card:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .mini-icon {
+            flex: 0 0 45px;
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--green-100);
+            color: var(--green-800);
+            font-size: 21px;
+        }
+
+        .mini-card h3 {
+            margin-bottom: 3px;
+            color: var(--green-950);
+            font-size: 15px;
+        }
+
+        .mini-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           FARM
+        ========================== */
+
+        .farm {
+            background: white;
+        }
+
+        .farm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .farm-card {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+            border-radius: 27px;
+            background: var(--green-900);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .farm-card-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .farm-card:hover .farm-card-image {
+            transform: scale(1.07);
+        }
+
+        .farm-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                0deg,
+                rgba(4,25,15,.94) 0%,
+                rgba(4,25,15,.4) 52%,
+                rgba(4,25,15,.02) 100%
+            );
+        }
+
+        .farm-card-content {
+            position: absolute;
+            z-index: 2;
+            left: 27px;
+            right: 27px;
+            bottom: 27px;
+        }
+
+        .farm-card-number {
+            width: 37px;
+            height: 37px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 50%;
+            background: rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+            font-size: 11px;
+        }
+
+        .farm-card h3 {
+            margin-bottom: 9px;
+            font-family: "Playfair Display", serif;
+            font-size: 29px;
+        }
+
+        .farm-card p {
+            color: rgba(255,255,255,.74);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           WHY
+        ========================== */
+
+        .why {
+            background:
+                radial-gradient(circle at 10% 20%, rgba(57,168,102,.12), transparent 30%),
+                var(--cream);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .why-card {
+            padding: 31px 25px;
+            border: 1px solid var(--border);
+            border-radius: 23px;
+            background: rgba(255,255,255,.65);
+            transition: .35s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-7px);
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .why-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 25px;
+            border-radius: 17px;
+            background: var(--green-800);
+            color: white;
+            font-size: 24px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 9px;
+            color: var(--green-950);
+            font-size: 17px;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 220px;
+            gap: 14px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #ddd;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 5;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(2) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+
+        .gallery-item:nth-child(3) {
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-column: span 3;
+            grid-row: span 1;
+        }
+
+        .gallery-item:nth-child(6) {
+            grid-column: span 4;
+            grid-row: span 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 18px;
+            background: linear-gradient(transparent, rgba(4,25,15,.7));
+            opacity: 0;
+            transition: .3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: white;
+            color: var(--green-900);
+            font-size: 18px;
+        }
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(2,15,9,.94);
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s ease;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-image {
+            max-width: min(1100px, 90vw);
+            max-height: 82vh;
+            border-radius: 15px;
+            object-fit: contain;
+            box-shadow: 0 30px 100px rgba(0,0,0,.5);
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            color: white;
+            cursor: pointer;
+            font-size: 22px;
+            transition: .25s ease;
+        }
+
+        .lightbox-close {
+            top: 25px;
+            right: 25px;
+        }
+
+        .lightbox-prev {
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            color: var(--green-900);
+        }
+
+        /* =========================
+           LOCATION
+        ========================== */
+
+        .location {
+            background: var(--cream);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 25px;
+        }
+
+        .location-info {
+            padding: 48px;
+            border-radius: 28px;
+            background: var(--green-900);
+            color: white;
+        }
+
+        .location-info .section-title {
+            color: white;
+            font-size: 42px;
+        }
+
+        .location-info > p {
+            margin: 18px 0 30px;
+            color: rgba(255,255,255,.68);
+            font-size: 14px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 14px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .info-row:last-child {
+            border-bottom: 0;
+        }
+
+        .info-row-icon {
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(255,255,255,.1);
+            color: #9ae5ad;
+        }
+
+        .info-row small {
+            display: block;
+            margin-bottom: 2px;
+            color: rgba(255,255,255,.45);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .info-row strong {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .map-card {
+            min-height: 570px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            background:
+                linear-gradient(rgba(15,85,53,.18), rgba(15,85,53,.18)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85")
+                center/cover no-repeat;
+            box-shadow: var(--shadow);
+        }
+
+        .map-card-content {
+            position: absolute;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 20px;
+            background: rgba(8,45,29,.88);
+            backdrop-filter: blur(15px);
+            color: white;
+        }
+
+        .map-card-content small {
+            color: #9ae5ad;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .map-card-content h3 {
+            margin: 5px 0 12px;
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+        }
+
+        .map-card-content p {
+            color: rgba(255,255,255,.68);
+            font-size: 12px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .contact-card {
+            display: block;
+            padding: 30px 24px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: var(--cream);
+            transition: .35s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            background: white;
+            box-shadow: var(--shadow);
+            border-color: rgba(35,134,83,.2);
+        }
+
+        .contact-icon {
+            width: 53px;
+            height: 53px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            background: var(--green-800);
+            color: white;
+            font-size: 22px;
+        }
+
+        .contact-card small {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--green-700);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 6px;
+            color: var(--green-950);
+            font-size: 16px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.65;
+            word-break: break-word;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            padding: 90px 0;
+            background:
+                linear-gradient(90deg, rgba(5,32,20,.94), rgba(8,59,36,.85)),
+                url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=2000&q=85")
+                center/cover no-repeat;
+            color: white;
+        }
+
+        .cta-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .cta-text {
+            max-width: 700px;
+        }
+
+        .cta-text .section-title {
+            color: white;
+            font-size: clamp(38px, 5vw, 58px);
+        }
+
+        .cta-text p {
+            max-width: 600px;
+            margin-top: 14px;
+            color: rgba(255,255,255,.67);
+            font-size: 15px;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-width: max-content;
+        }
+
+        .cta-actions .btn-outline {
+            border-color: rgba(255,255,255,.25);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            padding: 75px 0 25px;
+            background: #061f14;
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .7fr 1fr;
+            gap: 70px;
+            padding-bottom: 55px;
+        }
+
+        .footer-brand p {
+            max-width: 400px;
+            margin-top: 18px;
+            color: rgba(255,255,255,.5);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            margin-bottom: 18px;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            width: max-content;
+            color: rgba(255,255,255,.52);
+            font-size: 12px;
+            transition: .25s ease;
+        }
+
+        .footer-links a:hover {
+            color: #9ae5ad;
+            transform: translateX(3px);
+        }
+
+        .footer-contact {
+            display: grid;
+            gap: 11px;
+        }
+
+        .footer-contact a {
+            color: rgba(255,255,255,.52);
+            font-size: 12px;
+            transition: .25s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #9ae5ad;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 23px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            color: rgba(255,255,255,.35);
+            font-size: 10px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 50%;
+            color: rgba(255,255,255,.7);
+            transition: .25s ease;
+        }
+
+        .social-btn:hover {
+            background: white;
+            color: var(--green-900);
+        }
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
+
+        .back-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 800;
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: var(--green-800);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(8,45,29,.25);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: .3s ease;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           REVEAL
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1100px) {
+            .nav-links a {
+                padding-inline: 9px;
+                font-size: 13px;
+            }
+
+            .about-grid {
+                gap: 45px;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                min-height: 76px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 76px;
+                left: 20px;
+                right: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 14px;
+                border: 1px solid rgba(255,255,255,.12);
+                border-radius: 20px;
+                background: rgba(8,45,29,.98);
+                backdrop-filter: blur(20px);
+                box-shadow: 0 25px 60px rgba(0,0,0,.3);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-12px);
+                transition: .3s ease;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                padding: 13px 15px;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-call {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 720px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 9vw, 72px);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images {
+                max-width: 700px;
+                width: 100%;
+                margin-inline: auto;
+            }
+
+            .farm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .farm-card {
+                min-height: 430px;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-card {
+                min-height: 430px;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: min(var(--container), calc(100% - 30px));
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .logo-text strong {
+                font-size: 14px;
+            }
+
+            .logo-mark {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .hero {
+                min-height: 720px;
+                background:
+                    linear-gradient(0deg, rgba(4,25,15,.92) 0%, rgba(4,25,15,.63) 100%),
+                    url("https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1400&q=85")
+                    center/cover no-repeat;
+            }
+
+            .hero-content {
+                padding-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 49px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-trust {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item {
+                width: max-content;
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .about-images {
+                min-height: 460px;
+            }
+
+            .about-main-image {
+                width: 88%;
+                height: 400px;
+            }
+
+            .about-small-image {
+                width: 44%;
+                height: 185px;
+                border-width: 6px;
+            }
+
+            .about-badge {
+                left: -7px;
+                bottom: 30px;
+                width: 110px;
+                height: 110px;
+            }
+
+            .about-badge strong {
+                font-size: 17px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+            }
+
+            .gallery-item:nth-child(n) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .why-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
+                padding: 32px 23px;
+            }
+
+            .location-info .section-title {
+                font-size: 36px;
+            }
+
+            .map-card {
+                min-height: 380px;
+            }
+
+            .cta {
+                padding: 75px 0;
+            }
+
+            .cta-actions {
+                width: 100%;
+                min-width: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .lightbox {
+                padding: 15px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 42px;
+                height: 42px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADER
+    ========================== -->
+
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo"></div>
+            <span>Anowara Agro</span>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+
+                <a href="#home" class="logo">
+                    <div class="logo-mark">🐄</div>
+
+                    <div class="logo-text">
+                        <strong>Anowara Agro</strong>
+                        <small>Display Center</small>
+                    </div>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#farm">Our Farm</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#why">Why Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <a href="tel:+8801917999714" class="nav-call">
+                    ☎ Call Now
+                </a>
+
+                <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+                    <span></span>
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <div class="hero-content reveal">
+
+                    <div class="eyebrow">
+                        Anowara Agro Display Center
+                    </div>
+
+                    <h1>
+                        Healthy Livestock.<br>
+                        <span>Trusted Agro</span> Business.
+                    </h1>
+
+                    <p class="hero-description">
+                        A professional agricultural and livestock destination
+                        in Chattogram, Bangladesh, focused on cattle, buffalo
+                        and a quality agricultural environment.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="tel:+8801917999714"
+                           class="btn btn-primary">
+                            ☎ &nbsp; Call Now
+                        </a>
+
+                        <a href="https://maps.app.goo.gl/hzzKHkjqaW7cK3E6A"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline">
+                            📍 &nbsp; View Location
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            Open 24 Hours
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-icon">⌖</span>
+                            Chattogram, Bangladesh
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-icon">🐄</span>
+                            Cow & Buffalo Farm
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section about" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-images reveal">
+
+                        <img
+                            class="about-main-image"
+                            src="https://scontent.fcgp27-1.fna.fbcdn.net/v/t39.30808-6/488543691_1240836701383013_6986584547981586149_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=WkIUpAVCH-4Q7kNvwEUj9dc&_nc_oc=AdqE0QsM1DrDjnsnQYpgeBRku3OEXHvBkRAQsBWXW69CxVN5D2br_zam8QIHcpcSPZY&_nc_zt=23&_nc_ht=scontent.fcgp27-1.fna&_nc_gid=Sn4uYtKRlkbMg8fzb1leAQ&_nc_ss=7b289&oh=00_AQLRbGF2mTBP7uU26GWFc_zCxVzPI5iVGSNLywz2eqjV_A&oe=6AB1F932"
+                            alt="Cattle at Anowara Agro Display Center"
+                            loading="lazy"
+                        >
+
+                        <img
+                            class="about-small-image"
+                            src="https://scontent.fcgp27-1.fna.fbcdn.net/v/t39.30808-6/489074536_1244243294375687_8483392063430755827_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x810&ctp=s1080x810&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-kI_vJeDBwIQ7kNvwGknjqz&_nc_oc=AdoyJFD1h2v-sze-mo2BARtcGKdH74NsLdYaELLAVp0k3ZmR7Kps_cYvNc5QCs_-alU&_nc_zt=23&_nc_ht=scontent.fcgp27-1.fna&_nc_gid=qCrtaXnpKguYmjgr9msUCQ&_nc_ss=7b289&oh=00_AQKO4eYIN2zQNylSaDMq3-ZL69v4tq99dk0EmESakHPuYA&oe=6AB206A6"
+                            alt="Livestock at Anowara Agro"
+                            loading="lazy"
+                        >
+
+                        <div class="about-badge">
+                            <div>
+                                <strong>Agro</strong>
+                                <span>Chattogram<br>Bangladesh</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content reveal">
+
+                        <div class="section-head">
+
+                            <span class="section-label">
+                                About Our Business
+                            </span>
+
+                            <h2 class="section-title">
+                                Agriculture rooted in quality & care.
+                            </h2>
+
+                        </div>
+
+                        <p>
+                            Anowara Agro Display Center is an agricultural and
+                            livestock-focused business located on K.B. Aman Ali
+                            Road in Chattogram, Bangladesh.
+                        </p>
+
+                        <p>
+                            Our business focuses on cattle, buffalo and
+                            agricultural activities, providing a professional
+                            environment for visitors looking for a trusted
+                            local agro destination.
+                        </p>
+
+                        <div class="about-features">
+
+                            <div class="mini-card">
+
+                                <div class="mini-icon">🐄</div>
+
+                                <div>
+                                    <h3>Cattle & Buffalo</h3>
+                                    <p>
+                                        A livestock-focused agricultural
+                                        environment.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="mini-card">
+
+                                <div class="mini-icon">🌱</div>
+
+                                <div>
+                                    <h3>Professional Agro Business</h3>
+                                    <p>
+                                        A convenient destination for
+                                        agricultural and livestock activities.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="mini-card">
+
+                                <div class="mini-icon">📍</div>
+
+                                <div>
+                                    <h3>Chattogram Location</h3>
+                                    <p>
+                                        Located at K.B. Aman Ali Road,
+                                        Chattogram.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FARM
+        ========================== -->
+
+        <section class="section farm" id="farm">
+
+            <div class="container">
+
+                <div class="section-head center reveal">
+
+                    <span class="section-label">
+                        Our Farm
+                    </span>
+
+                    <h2 class="section-title">
+                        Our Farm & Livestock
+                    </h2>
+
+                    <p class="section-description">
+                        Explore the agricultural and livestock environment
+                        of Anowara Agro Display Center.
+                    </p>
+
+                </div>
+
+
+                <div class="farm-grid">
+
+                    <article class="farm-card reveal">
+
+                        <img
+                            class="farm-card-image"
+                            src="https://scontent.fcgp38-1.fna.fbcdn.net/v/t39.30808-6/432527745_936221641844522_7324521105800509495_n.jpg?stp=dst-jpg_tt6&cstp=mx598x597&ctp=s598x597&_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=D_4lhD9K_xQQ7kNvwEoKBKR&_nc_oc=AdpSVhF2pdnANbIQP7ye7Mgyj2XwkGW4yLxr5XSAm3B9cu_UTvywebDrVlx0qr08n5o&_nc_zt=23&_nc_ht=scontent.fcgp38-1.fna&_nc_gid=l7hyh_BfDL-Ur-oUA3h6vg&_nc_ss=7b289&oh=00_AQJKXqn7daCOH55NcmDMv_vyDNwggKcjAY5Q28DbSOyFVg&oe=6AB1F0C0"
+                            alt="Cow at Anowara Agro Display Center"
+                            loading="lazy"
+                        >
+
+                        <div class="farm-card-content">
+
+                            <div class="farm-card-number">01</div>
+
+                            <h3>Cow Farm</h3>
+
+                            <p>
+                                Explore our cattle-focused agricultural
+                                environment with an emphasis on livestock
+                                care and quality.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="farm-card reveal">
+
+                        <img
+                            class="farm-card-image"
+                            src="https://fortune.com/img-assets/wp-content/uploads/2026/06/AP26154383646392-e1780502114477.jpg?format=webp&w=1440&quality=75"
+                            alt="Buffalo livestock"
+                            loading="lazy"
+                        >
+
+                        <div class="farm-card-content">
+
+                            <div class="farm-card-number">02</div>
+
+                            <h3>Buffalo Farm</h3>
+
+                            <p>
+                                A dedicated livestock environment featuring
+                                buffalo and agricultural activities.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="farm-card reveal">
+
+                        <img
+                            class="farm-card-image"
+                            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=85"
+                            alt="Agricultural farm landscape in Bangladesh"
+                            loading="lazy"
+                        >
+
+                        <div class="farm-card-content">
+
+                            <div class="farm-card-number">03</div>
+
+                            <h3>Agro Display</h3>
+
+                            <p>
+                                A professional agro business environment
+                                designed around livestock and agricultural
+                                activities.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY CHOOSE US
+        ========================== -->
+
+        <section class="section why" id="why">
+
+            <div class="container">
+
+                <div class="section-head center reveal">
+
+                    <span class="section-label">
+                        Our Values
+                    </span>
+
+                    <h2 class="section-title">
+                        Why Choose Anowara Agro?
+                    </h2>
+
+                    <p class="section-description">
+                        Simple, direct and convenient access to a local
+                        agricultural and livestock business.
+                    </p>
+
+                </div>
+
+
+                <div class="why-grid">
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">🌿</div>
+
+                        <h3>Quality & Care</h3>
+
+                        <p>
+                            Focus on livestock care and a professional
+                            agricultural environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">🤝</div>
+
+                        <h3>Trusted Local Business</h3>
+
+                        <p>
+                            A convenient agro destination in Chattogram.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">🕐</div>
+
+                        <h3>Open 24 Hours</h3>
+
+                        <p>
+                            Open throughout the week, Monday through Sunday.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">📍</div>
+
+                        <h3>Easy to Reach</h3>
+
+                        <p>
+                            Quickly call us or use Google Maps to navigate
+                            to our location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY
+        ========================== -->
+
+        <section class="section gallery" id="gallery">
+
+            <div class="container">
+
+                <div class="section-head center reveal">
+
+                    <span class="section-label">
+                        Visual Tour
+                    </span>
+
+                    <h2 class="section-title">
+                        Our Gallery
+                    </h2>
+
+                    <p class="section-description">
+                        A glimpse of Anowara Agro Display Center.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item reveal"
+                         data-index="0">
+
+                        <img
+                            src="https://scontent.fcgp38-1.fna.fbcdn.net/v/t39.30808-6/432527745_936221641844522_7324521105800509495_n.jpg?stp=dst-jpg_tt6&cstp=mx598x597&ctp=s598x597&_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=D_4lhD9K_xQQ7kNvwEoKBKR&_nc_oc=AdpSVhF2pdnANbIQP7ye7Mgyj2XwkGW4yLxr5XSAm3B9cu_UTvywebDrVlx0qr08n5o&_nc_zt=23&_nc_ht=scontent.fcgp38-1.fna&_nc_gid=l7hyh_BfDL-Ur-oUA3h6vg&_nc_ss=7b289&oh=00_AQJKXqn7daCOH55NcmDMv_vyDNwggKcjAY5Q28DbSOyFVg&oe=6AB1F0C0"
+                            alt="Anowara Agro cattle"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item reveal"
+                         data-index="1">
+
+                        <img
+                            src="https://scontent.fcgp27-1.fna.fbcdn.net/v/t39.30808-6/488543691_1240836701383013_6986584547981586149_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=WkIUpAVCH-4Q7kNvwEUj9dc&_nc_oc=AdqE0QsM1DrDjnsnQYpgeBRku3OEXHvBkRAQsBWXW69CxVN5D2br_zam8QIHcpcSPZY&_nc_zt=23&_nc_ht=scontent.fcgp27-1.fna&_nc_gid=Sn4uYtKRlkbMg8fzb1leAQ&_nc_ss=7b289&oh=00_AQLRbGF2mTBP7uU26GWFc_zCxVzPI5iVGSNLywz2eqjV_A&oe=6AB1F932"
+                            alt="Livestock at Anowara Agro"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item reveal"
+                         data-index="2">
+
+                        <img
+                            src="https://scontent.fcgp27-1.fna.fbcdn.net/v/t39.30808-6/489074536_1244243294375687_8483392063430755827_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x810&ctp=s1080x810&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-kI_vJeDBwIQ7kNvwGknjqz&_nc_oc=AdoyJFD1h2v-sze-mo2BARtcGKdH74NsLdYaELLAVp0k3ZmR7Kps_cYvNc5QCs_-alU&_nc_zt=23&_nc_ht=scontent.fcgp27-1.fna&_nc_gid=qCrtaXnpKguYmjgr9msUCQ&_nc_ss=7b289&oh=00_AQKO4eYIN2zQNylSaDMq3-ZL69v4tq99dk0EmESakHPuYA&oe=6AB206A6"
+                            alt="Farm environment"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item reveal"
+                         data-index="3">
+
+                        <img
+                            src="https://scontent.fcgp38-1.fna.fbcdn.net/v/t39.30808-6/496768379_1276850897781593_8560142274938265151_n.jpg?stp=dst-jpg_tt6&cstp=mx960x720&ctp=s960x720&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=gdijaYNoeLUQ7kNvwGdy6nb&_nc_oc=Adq8wSD8p5LKykLiO9KoU-2zw9tqb_Xn_KDOgZiuO_mBnv6-7nDG8wdpuLXSMRM4amc&_nc_zt=23&_nc_ht=scontent.fcgp38-1.fna&_nc_gid=7B9SUpbMDlYRUyZnHQSk3A&_nc_ss=7b289&oh=00_AQK84j7aixGEuWoIFqgnusX-0dygrjJvoxmEvD7JqiJg3Q&oe=6AB1F36D"
+                            alt="Anowara Agro livestock"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item reveal"
+                         data-index="4">
+
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdeTMc8FcNZPSlDK-rjQvpFY_TPy5AiMDXfwlWiWUO__6Lxwzn7do5XAE&s=10"
+                            alt="Bangladesh cattle farm"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item reveal"
+                         data-index="5">
+
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnv5g19YvNux-cIiSUFzQoQy12eUpc8K0kFnuWKcywCgrL7UYG3wckP5rx&s=10"
+                            alt="Bangladesh agricultural livestock"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>↗</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LIGHTBOX
+        ========================== -->
+
+        <div class="lightbox" id="lightbox">
+
+            <button class="lightbox-close" id="lightboxClose"
+                    aria-label="Close image">
+                ×
+            </button>
+
+            <button class="lightbox-prev" id="lightboxPrev"
+                    aria-label="Previous image">
+                ‹
+            </button>
+
+            <img class="lightbox-image"
+                 id="lightboxImage"
+                 src=""
+                 alt="Gallery preview">
+
+            <button class="lightbox-next" id="lightboxNext"
+                    aria-label="Next image">
+                ›
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             LOCATION
+        ========================== -->
+
+        <section class="section location" id="location">
+
+            <div class="container">
+
+                <div class="location-grid">
+
+                    <div class="location-info reveal">
+
+                        <span class="section-label"
+                              style="color:#9ae5ad;">
+                            Visit Us
+                        </span>
+
+                        <h2 class="section-title">
+                            Find us in Chattogram.
+                        </h2>
+
+                        <p>
+                            Visit Anowara Agro Display Center at our location
+                            on K.B. Aman Ali Road.
+                        </p>
+
+                        <div class="info-list">
+
+                            <div class="info-row">
+
+                                <div class="info-row-icon">📍</div>
+
+                                <div>
+                                    <small>Address</small>
+                                    <strong>
+                                        1769, 1936 K.B. Aman Ali Rd,
+                                        Chattogram, Bangladesh
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <div class="info-row-icon">🕐</div>
+
+                                <div>
+                                    <small>Opening Hours</small>
+                                    <strong>
+                                        Open 24 Hours — Monday to Sunday
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <div class="info-row-icon">☎</div>
+
+                                <div>
+                                    <small>Phone</small>
+                                    <strong>
+                                        01917-999714
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/hzzKHkjqaW7cK3E6A"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-primary">
+                            📍 &nbsp; Get Directions
+                        </a>
+
+                    </div>
+
+
+                    <div class="map-card reveal">
+
+                        <div class="map-card-content">
+
+                            <small>Our Location</small>
+
+                            <h3>
+                                K.B. Aman Ali Road
+                            </h3>
+
+                            <p>
+                                1769, 1936 K.B. Aman Ali Rd,
+                                Chattogram, Bangladesh
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="section contact" id="contact">
+
+            <div class="container">
+
+                <div class="section-head center reveal">
+
+                    <span class="section-label">
+                        Contact Us
+                    </span>
+
+                    <h2 class="section-title">
+                        Let's connect directly.
+                    </h2>
+
+                    <p class="section-description">
+                        Call us, visit our Facebook page, send an email or
+                        get directions to our location.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+                    <a href="tel:+8801917999714"
+                       class="contact-card reveal">
+
+                        <div class="contact-icon">☎</div>
+
+                        <small>Call Us</small>
+
+                        <h3>01917-999714</h3>
+
+                        <p>
+                            Tap to call directly.
+                        </p>
+
+                    </a>
+
+
+                    <a href="tel:+8801748080843"
+                       class="contact-card reveal">
+
+                        <div class="contact-icon">📞</div>
+
+                        <small>Alternative Number</small>
+
+                        <h3>01748-080843</h3>
+
+                        <p>
+                            Tap to call directly.
+                        </p>
+
+                    </a>
+
+
+                    <a href="mailto:hasnat085@gmail.com"
+                       class="contact-card reveal">
+
+                        <div class="contact-icon">✉</div>
+
+                        <small>Email</small>
+
+                        <h3>Email Us</h3>
+
+                        <p>
+                            hasnat085@gmail.com
+                        </p>
+
+                    </a>
+
+
+                    <a href="https://www.facebook.com/AnowaraAgroBd/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="contact-card reveal">
+
+                        <div class="contact-icon">f</div>
+
+                        <small>Facebook</small>
+
+                        <h3>Anowara Agro BD</h3>
+
+                        <p>
+                            Visit our official Facebook page.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-content reveal">
+
+                    <div class="cta-text">
+
+                        <span class="section-label"
+                              style="color:#9ae5ad;">
+                            Anowara Agro Display Center
+                        </span>
+
+                        <h2 class="section-title">
+                            Looking for us?
+                        </h2>
+
+                        <p>
+                            Call us or get directions to visit our location
+                            in Chattogram.
+                        </p>
+
+                    </div>
+
+
+                    <div class="cta-actions">
+
+                        <a href="tel:+8801917999714"
+                           class="btn btn-primary">
+                            ☎ Call Now
+                        </a>
+
+                        <a href="https://maps.app.goo.gl/hzzKHkjqaW7cK3E6A"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline">
+                            📍 Directions
+                        </a>
+
+                        <a href="https://www.facebook.com/AnowaraAgroBd/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline">
+                            f Facebook
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="logo">
+
+                        <div class="logo-mark">🐄</div>
+
+                        <div class="logo-text">
+                            <strong>Anowara Agro</strong>
+                            <small>Display Center</small>
+                        </div>
+
+                    </a>
+
+                    <p>
+                        Agricultural & Livestock Business —
+                        Chattogram, Bangladesh.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="footer-title">
+                        Quick Links
+                    </h3>
+
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#farm">Our Farm</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#why">Why Us</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="footer-title">
+                        Contact
+                    </h3>
+
+                    <div class="footer-contact">
+
+                        <a href="tel:+8801917999714">
+                            ☎ 01917-999714
+                        </a>
+
+                        <a href="tel:+8801748080843">
+                            ☎ 01748-080843
+                        </a>
+
+                        <a href="mailto:hasnat085@gmail.com">
+                            ✉ hasnat085@gmail.com
+                        </a>
+
+                        <a href="https://maps.app.goo.gl/hzzKHkjqaW7cK3E6A"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            📍 K.B. Aman Ali Road, Chattogram
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Anowara Agro Display Center.
+                    All Rights Reserved.
+                </span>
+
+                <div class="footer-social">
+
+                    <a class="social-btn"
+                       href="https://www.facebook.com/AnowaraAgroBd/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        f
+                    </a>
+
+                    <a class="social-btn"
+                       href="tel:+8801917999714"
+                       aria-label="Call">
+                        ☎
+                    </a>
+
+                    <a class="social-btn"
+                       href="https://maps.app.goo.gl/hzzKHkjqaW7cK3E6A"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Location">
+                        ⌖
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+
+    <button class="back-top"
+            id="backTop"
+            aria-label="Back to top">
+        ↑
+    </button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           LOADER
+        ========================== */
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+                document.getElementById("loader").classList.add("hide");
+            }, 500);
+
+        });
+
+
+        /* =========================
+           HEADER SCROLL
+        ========================== */
+
+        const header = document.getElementById("header");
+        const backTop = document.getElementById("backTop");
+
+        function handleScroll() {
+
+            if (window.scrollY > 40) {
+                header.classList.add("scrolled");
+                backTop.classList.add("show");
+            } else {
+                header.classList.remove("scrolled");
+                backTop.classList.remove("show");
+            }
+
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        handleScroll();
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("open");
+            document.body.classList.toggle("no-scroll");
+
+        });
+
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("open");
+                document.body.classList.remove("no-scroll");
+
+            });
+
+        });
+
+
+        /* =========================
+           ACTIVE NAVIGATION
+        ========================== */
+
+        const sections = document.querySelectorAll("main section[id]");
+        const navigationLinks = document.querySelectorAll(".nav-links a");
+
+        function updateActiveNavigation() {
+
+            let currentSection = "";
+
+            sections.forEach(function (section) {
+
+                const sectionTop = section.offsetTop - 180;
+                const sectionHeight = section.offsetHeight;
+
+                if (
+                    window.scrollY >= sectionTop &&
+                    window.scrollY < sectionTop + sectionHeight
+                ) {
+                    currentSection = section.getAttribute("id");
+                }
+
+            });
+
+            navigationLinks.forEach(function (link) {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") === "#" + currentSection
+                ) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        }
+
+        window.addEventListener("scroll", updateActiveNavigation);
+
+        updateActiveNavigation();
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================== */
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        revealElements.forEach(function (element) {
+            revealObserver.observe(element);
+        });
+
+
+        /* =========================
+           GALLERY LIGHTBOX
+        ========================== */
+
+        const galleryItems =
+            document.querySelectorAll(".gallery-item");
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const lightboxClose =
+            document.getElementById("lightboxClose");
+
+        const lightboxPrev =
+            document.getElementById("lightboxPrev");
+
+        const lightboxNext =
+            document.getElementById("lightboxNext");
+
+
+        const galleryImages = Array.from(galleryItems).map(function (item) {
+
+            return item.querySelector("img").src;
+
+        });
+
+
+        let currentImageIndex = 0;
+
+
+        function openLightbox(index) {
+
+            currentImageIndex = index;
+
+            lightboxImage.src = galleryImages[currentImageIndex];
+
+            lightbox.classList.add("open");
+
+            document.body.classList.add("no-scroll");
+
+        }
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("open");
+
+            document.body.classList.remove("no-scroll");
+
+        }
+
+
+        function showNextImage() {
+
+            currentImageIndex =
+                (currentImageIndex + 1) %
+                galleryImages.length;
+
+            lightboxImage.src =
+                galleryImages[currentImageIndex];
+
+        }
+
+
+        function showPreviousImage() {
+
+            currentImageIndex =
+                (currentImageIndex - 1 + galleryImages.length) %
+                galleryImages.length;
+
+            lightboxImage.src =
+                galleryImages[currentImageIndex];
+
+        }
+
+
+        galleryItems.forEach(function (item, index) {
+
+            item.addEventListener("click", function () {
+
+                openLightbox(index);
+
+            });
+
+        });
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightboxNext.addEventListener(
+            "click",
+            showNextImage
+        );
+
+
+        lightboxPrev.addEventListener(
+            "click",
+            showPreviousImage
+        );
+
+
+        lightbox.addEventListener("click", function (event) {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+
+        document.addEventListener("keydown", function (event) {
+
+            if (!lightbox.classList.contains("open")) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowRight") {
+                showNextImage();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showPreviousImage();
+            }
+
+        });
+
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
+
+        backTop.addEventListener("click", function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* =========================
+           IMAGE FALLBACK
+        ========================== */
+
+        document.querySelectorAll("img").forEach(function (image) {
+
+            image.addEventListener("error", function () {
+
+                this.style.background =
+                    "linear-gradient(135deg, #0d3b26, #238653)";
+
+                this.style.objectFit = "cover";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
